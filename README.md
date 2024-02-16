@@ -1,3 +1,3 @@
-**#TP_DOCKER_1**
+**TP_DOCKER_1**
 
 Elian Blanchard
