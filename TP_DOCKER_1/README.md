@@ -123,4 +123,6 @@ docker run -d --name mysql_container -e MYSQL_ROOT_PASSWORD=password mysql:lates
 docker run -d --name phpmyadmin_container --link mysql_container:db -p 8080:80 phpmyadmin/phpmyadmin:latest
 ```
 
-![Res : Pour vérifier que la connexion à la plateforme phpmyadmin est possible, localhost:8080](phpMyAdmin.png)
+- Res : Pour vérifier que la connexion à la plateforme phpmyadmin est possible, localhost:8080
+
+![plateforme phpmyadmin](phpMyAdmin.png)
