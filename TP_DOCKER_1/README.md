@@ -74,4 +74,6 @@ docker build -t imagehtml .
 docker run --name containerhtml -d -p 8080:80 imagehtml
 ```
 
-- Res : 
+- Res : Successfully built 106b2ee870eb <br>
+Successfully tagged imagehtml:latest <br>
+e0be629cfa71   imagehtml   "httpd-foreground"   16 seconds ago   Up 15 seconds   0.0.0.0:8080->80/tcp, :::8080->80/tcp   containerhtml
