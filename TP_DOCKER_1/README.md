@@ -54,16 +54,24 @@ docker ps
 a. A l'aide d'un Dockerfile, créer une image qui permet d'exécuter un serveur web (apache)
 
 ```bash
-echo "# Récupérer l'image Apache officielle
+echo "# Récupérer l'image Apache officielle.
 FROM httpd:latest
 
-# Nous place dans le dossier de travail du container
+# Nous place dans le dossier de travail du container.
 WORKDIR /usr/local/apache2/htdocs/
 
-# Copie le fichier index.html depuis TP_DOCKER_1 en local vers le dossier de travail du container précédemment définie
+# Copie le fichier index.html depuis TP_DOCKER_1 en local vers le dossier de travail du container précédemment définie.
 COPY ./html/index.html .
 
 # Mappe le port 80 sur Docker pour qu'il soit accessible depuis l'extérieur sur le port de l'hôte.
 EXPOSE 80" > ./Dockerfile
 ```
 
+b. Exécuter cette nouvelle image de manière à servir ./html/index.html
+
+```bash
+docker build -t imagehtml .
+docker run --name containerhtml -d -p 8080:80 imagehtml
+```
+
+- Res : 
