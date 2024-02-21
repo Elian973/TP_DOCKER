@@ -24,4 +24,10 @@ mkdir ./html
 echo "Hello World" > ./html/index.html
 ```
 
-d. 
+d. Démarrer un nouveau container et servir la page html créée précédemment à l'aide d'une référence absolue (chemin de racine à racine):
+
+```bash
+docker run -dp 8080:80 --name contenair_index.html -v D:\Git\TP_DOCKER\TP_DOCKER_1\html\index.html:/usr/local/apache2/htdocs/index.html  httpd:latest
+docker ps
+```
+- Res : e2647ed9fff8   httpd:latest   "httpd-foreground"   10 seconds ago   Up 3 seconds   0.0.0.0:8080->80/tcp   contenair_index.html
