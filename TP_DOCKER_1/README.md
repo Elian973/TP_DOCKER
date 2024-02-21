@@ -126,3 +126,15 @@ docker run -d --name phpmyadmin_container --link mysql_container:db -p 8080:80 p
 - Res : Pour vérifier que la connexion à la plateforme phpmyadmin est possible, localhost:8080
 
 ![plateforme phpmyadmin](phpMyAdmin.png)
+
+## 6 . Utilisation de docker-compose.yml
+
+a. Décrire à quoi sert docker-compose par rapport à docker run
+
+### Comparaison entre Docker Compose et Docker Run :
+
+| Caractéristique                             | Docker Compose                                              | Docker Run                                            |
+|--------------------------------------------|-------------------------------------------------------------|-------------------------------------------------------|
+| Utilisation                                 | Définir et gérer des applications multi-conteneurs           | Lancer des conteneurs Docker individuels               |
+| Facilité de configuration                   | Facilite la configuration                                    | Principalement utilisé pour des cas simples ou des tests rapides  |
+| Gestion des applications complexes         | Permet de définir plusieurs services, leurs dépendances et configurations dans un fichier unique | Difficile pour la gestion d'applications complexes ou multi-conteneurs  |
