@@ -107,9 +107,20 @@ docker pull mysql:latest
 docker pull phpmyadmin/phpmyadmin:latest
 ```
 
-- Res : ─# docker images                           
-REPOSITORY              TAG       IMAGE ID       CREATED          SIZE
-imagehtml               latest    106b2ee870eb   52 minutes ago   167MB
-mysql                   latest    a88c3e85e887   4 weeks ago      632MB
-httpd                   latest    2776f4da9d55   5 weeks ago      167MB
-phpmyadmin/phpmyadmin   latest    933569f3a9f6   7 months ago     562MB
+- Res : Images Docker actuellement présentes :
+
+| Repository              | Tag       | Image ID       | Created          | Size  |
+|-------------------------|-----------|-----------------|------------------|-------|
+| imagehtml               | latest    | 106b2ee870eb   | 52 minutes ago   | 167MB |
+| mysql                   | latest    | a88c3e85e887   | 4 weeks ago      | 632MB |
+| httpd                   | latest    | 2776f4da9d55   | 5 weeks ago      | 167MB |
+| phpmyadmin/phpmyadmin   | latest    | 933569f3a9f6   | 7 months ago     | 562MB |
+
+b. Exécuter 2 containers à partir des images
+
+```bash
+docker run -d --name mysql_container -e MYSQL_ROOT_PASSWORD=password mysql:latest
+docker run -d --name phpmyadmin_container --link mysql_container:db -p 8080:80 phpmyadmin/phpmyadmin:latest
+```
+
+![Res : Pour vérifier que la connexion à la plateforme phpmyadmin est possible, localhost:8080](phpMyAdmin.png)
