@@ -77,3 +77,23 @@ docker run --name containerhtml -d -p 8080:80 imagehtml
 - Res : Successfully built 106b2ee870eb <br>
 Successfully tagged imagehtml:latest <br>
 e0be629cfa71   imagehtml   "httpd-foreground"   16 seconds ago   Up 15 seconds   0.0.0.0:8080->80/tcp, :::8080->80/tcp   containerhtml
+
+c. quelles différences observez-vous entre les questions 3 et 4, trouvez les avantages et les inconvénients de chaque procédure (mount volume vs copy).
+
+- Res : Via une commande CMD (question 3), la construction est rapide mais la reproductibilité et la gestion d'équipe sont limitées. Avec un Dockerfile, la reproductibilité est assurée, mais la construction peut être plus lente et l'image peut être volumineuse.
+
+### Montage de Volumes (Volume Mount) :
+
+| **Avantages**                     | **Inconvénients**                             |
+|-----------------------------------|-----------------------------------------------|
+| Persistance des données           | Complexité initiale                           |
+| Facilité de mise à jour des fichiers | Dépendance au système de fichiers hôte       |
+| Partage de données entre plusieurs conteneurs |                                           |
+
+### Copie de Fichiers (COPY) :
+
+| **Avantages**                     | **Inconvénients**                             |
+|-----------------------------------|-----------------------------------------------|
+| Facilité d'utilisation             | Pas de persistance des données               |
+| Indépendance du système hôte        | Taille de l'image peut augmenter              |
+| Reproductibilité                   |                                               |
