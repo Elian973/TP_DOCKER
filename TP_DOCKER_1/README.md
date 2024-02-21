@@ -38,3 +38,13 @@ e. Supprimer le container
 docker stop 9066bf6d3105
 docker rm 9066bf6d3105
 ```
+
+f. Relancez le même container sans l'option -v puis cp pour servir votre fichier (docker cp ARGS)
+
+```bash
+docker run -dp 8080:80 --name contenair_via_cp httpd:latest
+docker cp D:\Git\TP_DOCKER\TP_DOCKER_1\html\index.html 12f01eb59afc:/usr/local/apache2/htdocs/index.html
+docker ps
+```
+- Res : 12f01eb59afc   httpd:latest   "httpd-foreground"   9 seconds ago   Up 3 seconds   0.0.0.0:8080->80/tcp   contenair_via_cp <br>
+        Successfully copied 2.05kB to 12f01eb59afc:/usr/local/apache2/htdocs/index.html
