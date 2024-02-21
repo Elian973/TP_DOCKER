@@ -78,7 +78,7 @@ docker run --name containerhtml -d -p 8080:80 imagehtml
 Successfully tagged imagehtml:latest <br>
 e0be629cfa71   imagehtml   "httpd-foreground"   16 seconds ago   Up 15 seconds   0.0.0.0:8080->80/tcp, :::8080->80/tcp   containerhtml
 
-c. quelles différences observez-vous entre les questions 3 et 4, trouvez les avantages et les inconvénients de chaque procédure (mount volume vs copy).
+c. Les différences observées entre les questions 3 et 4, trouvez les avantages et les inconvénients de chaque procédure (mount volume vs copy).
 
 - Res : Via une commande CMD (question 3), la construction est rapide mais la reproductibilité et la gestion d'équipe sont limitées. Avec un Dockerfile, la reproductibilité est assurée, mais la construction peut être plus lente et l'image peut être volumineuse.
 
@@ -97,3 +97,19 @@ c. quelles différences observez-vous entre les questions 3 et 4, trouvez les av
 | Facilité d'utilisation             | Pas de persistance des données               |
 | Indépendance du système hôte        | Taille de l'image peut augmenter              |
 | Reproductibilité                   |                                               |
+
+## 5 . Utiliser une base de données dans un contenair docker
+
+a. Récupérer les images mysql et phpmyadmin depuis le Docker Hub
+
+```bash
+docker pull mysql:latest
+docker pull phpmyadmin/phpmyadmin:latest
+```
+
+- Res : ─# docker images                           
+REPOSITORY              TAG       IMAGE ID       CREATED          SIZE
+imagehtml               latest    106b2ee870eb   52 minutes ago   167MB
+mysql                   latest    a88c3e85e887   4 weeks ago      632MB
+httpd                   latest    2776f4da9d55   5 weeks ago      167MB
+phpmyadmin/phpmyadmin   latest    933569f3a9f6   7 months ago     562MB
