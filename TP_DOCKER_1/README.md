@@ -31,3 +31,10 @@ docker run -dp 8080:80 --name contenair_index.html -v D:\Git\TP_DOCKER\TP_DOCKER
 docker ps
 ```
 - Res : e2647ed9fff8   httpd:latest   "httpd-foreground"   10 seconds ago   Up 3 seconds   0.0.0.0:8080->80/tcp   contenair_index.html
+
+e. Supprimer le container
+
+```bash
+docker stop 9066bf6d3105
+docker rm 9066bf6d3105
+```
