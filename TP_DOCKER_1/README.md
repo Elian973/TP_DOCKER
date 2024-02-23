@@ -142,6 +142,28 @@ a. Décrire à quoi sert docker-compose par rapport à docker run
 b. Les commandes qui permet de lancer et stopper tout les contenairs du fichiers yaml
 
 ```bash
-docker-compose up 
+docker-compose up -d
 docker-compose down
+```
+
+c. Le fichier docker-compose.yml pour servir la base de données (mysql) et phpmyadmin
+
+```bash
+version: '3.8'
+
+services:
+  container_mysql:
+    image: mysql:latest
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+
+  container_phpmyadmin:
+    image: phpmyadmin/phpmyadmin:latest
+    restart: always
+    environment:
+      PMA_HOST: container_mysql
+
+    ports:
+      - "8080:80"
 ```
