@@ -138,3 +138,10 @@ a. Décrire à quoi sert docker-compose par rapport à docker run
 | Utilisation                                 | Définir et gérer des applications multi-conteneurs           | Lancer des conteneurs Docker individuels               |
 | Facilité de configuration                   | Facilite la configuration                                    | Principalement utilisé pour des cas simples ou des tests rapides  |
 | Gestion des applications complexes         | Permet de définir plusieurs services, leurs dépendances et configurations dans un fichier unique | Difficile pour la gestion d'applications complexes ou multi-conteneurs  |
+
+b. Les commandes qui permet de lancer et stopper tout les contenairs du fichiers yaml
+
+```bash
+docker-compose up 
+docker-compose down
+```
